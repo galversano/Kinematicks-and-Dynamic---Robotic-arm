@@ -77,6 +77,8 @@ For calculate the Motion planning, the inputs: start point and end point (X,Y,Z)
 
 Motion planning will base on acceleration. const speed and deceleration , trapzoid motion (end effector):
 ![image](https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/2814d2e3-d9dc-4bd0-bee1-b91fa2befafb)
+
+
 The position for the end effector (each dt) will look like:
 (point [0 400 1200] -> [0 300 800])
 ![image](https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/7448d1cf-8701-451d-812c-be22e6ba2e66)
