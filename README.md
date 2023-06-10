@@ -102,4 +102,11 @@ The 3D plot for the X,Y,Z (End effector):
 
 ![Doron_plot3D](https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/d4654b8c-f734-4b68-a3ba-80678cfb00bf)
 
+Simulation:
+
+https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/41f710f2-95d7-4b9f-ba06-bd34b689d23d
+
+
+
+
 
