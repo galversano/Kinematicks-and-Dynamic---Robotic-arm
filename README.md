@@ -91,6 +91,13 @@ https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177
 
 
 
+# Motion plan 2T
+his code simulates the movement of a robotic arm with multiple degrees of freedom (DOF) using a trapezoidal motion profile.
+The diffrence here is that every DOF will using trapezoidal motion profile and not the end effector.
+
+The 3D plot for the X,Y,Z (End effector):
+
+![Doron_plot3D](https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/d4654b8c-f734-4b68-a3ba-80678cfb00bf)
 
 
 
