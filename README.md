@@ -1,5 +1,6 @@
 # Kinematicks-and-Dynamic-Robotic-arm
-Matlab program for Robotic arm (DOF RPPRRR)
+This code simulates the movement of a robotic arm with 6 degrees of freedom (DOF) using a trapezoidal motion profile.
+The DOF will be RPPRRR
 R-rotation
 P-prismatic
 
