@@ -19,6 +19,8 @@ Here you can see a video for stick model in ROS2-Rviz:
 https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1
 
 
+If you need the URDF, send me message :)
+
 
 # Forward Kinematicks
 Calculate the Forward Kinematicks for robotic arm DOF (RPPRRR)
