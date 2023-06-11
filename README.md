@@ -23,10 +23,6 @@ Video for stick model in ROS2-Rviz:
 
 
 
-https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/6d6b4562-a33b-4b2d-9796-259b186d10c2
-
-
-
 
 
 If you need the URDF, send me a message :)
