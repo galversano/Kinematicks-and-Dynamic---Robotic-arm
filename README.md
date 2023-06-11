@@ -12,11 +12,12 @@ The robot will include 6 DOF.
 Rotation Prismatic Prismatic Rotation Rotation Rotation
 **(theta1 , l1 ,l2 , theta2, theta3, theta4)**
 
-Here you can see a video for stick model in ROS2-Rviz:
+Video for stick model in ROS2-Rviz:
+
+![Video]([https://www.example.com/video-link.mp4](https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1) =250x)
 
 
 
-https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1
 
 
 If you need the URDF, send me a message :)
