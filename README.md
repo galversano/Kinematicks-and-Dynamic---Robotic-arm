@@ -14,7 +14,7 @@ Rotation Prismatic Prismatic Rotation Rotation Rotation
 
 Video for stick model in ROS2-Rviz:
 
-<video src="https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1.mp4" heigth="200" width="200">
+https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1.mp4
 
 
 If you need the URDF, send me a message :)
