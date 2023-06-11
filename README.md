@@ -16,6 +16,15 @@ Video for stick model in ROS2-Rviz:
 
 ![Video]([https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/46b216fb-d5f7-47be-b348-594a68f571b1] =250x)
 
+<video width="320" height="240" controls>
+  <source src="https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/raw/main/assets/66177443/6d6b4562-a33b-4b2d-9796-259b186d10c2.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+
+https://github.com/galversano/Kinematicks-and-Dynamic---Robotic-arm/assets/66177443/6d6b4562-a33b-4b2d-9796-259b186d10c2
+
 
 
 
