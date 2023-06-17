@@ -3,8 +3,8 @@
 %const
 
 %Initial and final location
-ds=input('enter start piont, like [X;Y;Z]:')
-dg=input('enter end piont, like [X;Y;Z]:')
+ds=input('enter start point, like [X;Y;Z]:')
+dg=input('enter end point, like [X;Y;Z]:')
 
 %Roll pitch yaw (start)
  tx=input('enter start roll:') 
@@ -105,13 +105,13 @@ end
 velos(t+1)=s_dot;
 d_t=ds+s*(dg-ds);
 v_t=s_dot*(dg-ds);
-arry_point(1,t+1)=d_t(1);
-arry_point(2,t+1)=d_t(2);
-arry_point(3,t+1)=d_t(3);
+pos_point(1,t+1)=d_t(1);
+pos_point(2,t+1)=d_t(2);
+pos_point(3,t+1)=d_t(3);
 
-arry_point_v(1,t+1)=v_t(1);
-arry_point_v(2,t+1)=v_t(2);
-arry_point_v(3,t+1)=v_t(3);
+pos_point_v(1,t+1)=v_t(1);
+pos_point_v(2,t+1)=v_t(2);
+pos_point_v(3,t+1)=v_t(3);
 
 %Orientation
 teta=tetal*s
@@ -135,53 +135,53 @@ grid on
 %velocity end effector x,y,z
 figure(99)
 subplot(3, 1, 1);
-plot(0:30,arry_point_v(1,:),'LineWidth',1.5)
+plot(0:30,pos_point_v(1,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point_v(1,:),'o','LineWidth',1.5)
+plot(0:30,pos_point_v(1,:),'o','LineWidth',1.5)
 ylabel("Velocity (x) [mm/s]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 grid minor
 subplot(3, 1, 2);
-plot(0:30,arry_point_v(2,:),'LineWidth',1.5)
+plot(0:30,pos_point_v(2,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point_v(2,:),'o','LineWidth',1.5)
+plot(0:30,pos_point_v(2,:),'o','LineWidth',1.5)
 ylabel("Velocity (y) [mm/s]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 %xlim([0 28]);
 grid minor
 subplot(3, 1, 3);
-plot(0:30,arry_point_v(3,:),'LineWidth',1.5)
+plot(0:30,pos_point_v(3,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point_v(3,:),'o','LineWidth',1.5)
+plot(0:30,pos_point_v(3,:),'o','LineWidth',1.5)
 ylabel("Velocity (z) [mm/s]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 %xlim([0 28]);
 grid minor
 
 %Position end effector x,y,z
-arry_point(1,1)=ds(1)
-arry_point(2,1)=ds(2)
-arry_point(3,1)=ds(3)
+pos_point(1,1)=ds(1)
+pos_point(2,1)=ds(2)
+pos_point(3,1)=ds(3)
 figure(100)
 subplot(3, 1, 1);
-plot(0:30,arry_point(1,:),'LineWidth',1.5)
+plot(0:30,pos_point(1,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point(1,:),'o','LineWidth',1.5)
+plot(0:30,pos_point(1,:),'o','LineWidth',1.5)
 ylabel("Position (x) [mm]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 grid minor
 subplot(3, 1, 2);
-plot(0:30,arry_point(2,:),'LineWidth',1.5)
+plot(0:30,pos_point(2,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point(2,:),'o','LineWidth',1.5)
+plot(0:30,pos_point(2,:),'o','LineWidth',1.5)
 ylabel("Position (y) [mm]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 %xlim([0 28]);
 grid minor
 subplot(3, 1, 3);
-plot(0:30,arry_point(3,:),'LineWidth',1.5)
+plot(0:30,pos_point(3,:),'LineWidth',1.5)
 hold on
-plot(0:30,arry_point(3,:),'o','LineWidth',1.5)
+plot(0:30,pos_point(3,:),'o','LineWidth',1.5)
 ylabel("Position (z) [mm]",'FontSize',14)
 xlabel("Time [sec]",'FontSize',14)
 %xlim([0 28]);
@@ -189,12 +189,12 @@ grid minor
 
 
 %grid on
-%now we have matrix with linear end pionts
-
+%now we have matrix with linear end points
+%3d xyz end effector point
 figure (3)
-plot3(arry_point(1,2:30),arry_point(2,2:30),arry_point(3,2:30),  'o','LineWidth',1.2)
+plot3(pos_point(1,2:30),pos_point(2,2:30),pos_point(3,2:30),  'o','LineWidth',1.2)
 hold on
-plot3(arry_point(1,2:30),arry_point(2,2:30),arry_point(3,2:30),'LineWidth',1.5)
+plot3(pos_point(1,2:30),pos_point(2,2:30),pos_point(3,2:30),'LineWidth',1.5)
 xlim([-0.4 0.4])
 xlabel('x','FontSize',14)
 ylabel('y','FontSize',14)
@@ -202,12 +202,42 @@ zlabel('z','FontSize',14)
 grid on
 
 
+%calculate roll pitch yaw
+for i=1:31
+    beta(i)=asin(-arry_matrix(1,3,i))
+    gamma(i)=asin((arry_matrix(2,3,i))/(cos(beta(i))))
+    alpha(i)=asin((arry_matrix(1,2,i))/(cos(beta(i))))
+end
+figure(101)
+subplot(3, 1, 1);
+plot(0:30,rad2deg(beta(1,:)),'LineWidth',1.5)
+hold on
+plot(0:30,rad2deg(beta(1,:)),'o','LineWidth',1.5)
+ylabel("pitch (deg) ",'FontSize',14)
+xlabel("Time [sec]",'FontSize',14)
+grid minor
+subplot(3, 1, 2);
+plot(0:30,rad2deg(gamma(1,:)),'LineWidth',1.5)
+hold on
+plot(0:30,rad2deg(gamma(1,:)),'o','LineWidth',1.5)
+ylabel("roll (deg) ",'FontSize',14)
+xlabel("Time [sec]",'FontSize',14)
+grid minor
+subplot(3, 1, 3);
+plot(0:30,rad2deg(alpha(1,:)),'LineWidth',1.5)
+hold on
+plot(0:30,rad2deg(alpha(1,:)),'o','LineWidth',1.5)
+ylabel("yaw (deg) ",'FontSize',14)
+xlabel("Time [sec]",'FontSize',14)
+grid minor
+
+
 j=1;
 for j=1:31
 
-    x=arry_point(1,j);
-    y=arry_point(2,j);
-    z=arry_point(3,j);
+    x=pos_point(1,j);
+    y=pos_point(2,j);
+    z=pos_point(3,j);
     
     Rn=arry_matrix(:,:,j)
    
