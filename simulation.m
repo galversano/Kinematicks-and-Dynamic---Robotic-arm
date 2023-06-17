@@ -1,4 +1,4 @@
-%The simulation (without graphs)
+%The simulation
 
 %const
 
